@@ -1,0 +1,85 @@
+{
+	"info": {
+		"name": "Spring Boot Practical Exam - SET 2",
+		"description": "Postman collection to test the endpoints for the Spring Boot practical exam.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Q2. Register Student (Valid Data)",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/register?name=John Doe&email=john.doe@example.com&course=Advanced Java&phone=9876543210",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"register"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "John Doe",
+							"description": "Student's Name"
+						},
+						{
+							"key": "email",
+							"value": "john.doe@example.com",
+							"description": "Student's Email"
+						},
+						{
+							"key": "course",
+							"value": "Advanced Java",
+							"description": "Course Enrolled"
+						},
+						{
+							"key": "phone",
+							"value": "9876543210",
+							"description": "Phone Number (Optional)"
+						}
+					]
+				},
+				"description": "Tests the /register endpoint by passing parameters as Query Strings (@RequestParam). Expects a string response: 'User Registered: <name> | Email: <email>'"
+			},
+			"response": []
+		},
+		{
+			"name": "Q2. Register Student (Without Phone)",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/register?name=Jane Smith&email=jane.smith@example.com&course=Spring Boot",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"register"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "Jane Smith"
+						},
+						{
+							"key": "email",
+							"value": "jane.smith@example.com"
+						},
+						{
+							"key": "course",
+							"value": "Spring Boot"
+						}
+					]
+				},
+				"description": "Tests the /register endpoint without the optional phone parameter."
+			},
+			"response": []
+		}
+	]
+}
