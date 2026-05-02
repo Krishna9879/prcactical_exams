@@ -1,0 +1,16 @@
+package com.example.quizapp.repository;
+
+import com.example.quizapp.model.Option;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+import java.util.List;
+
+/**
+ * Repository for Option entity operations.
+ */
+@Repository
+public interface OptionRepository extends JpaRepository<Option, Long> {
+
+    List<Option> findByQuestionId(Long questionId);
+}
